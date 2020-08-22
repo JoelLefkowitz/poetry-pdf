@@ -3,7 +3,7 @@ from setuptools import setup
 if __name__ == "__main__":
     setup(
         install_requires=["docopts", "jinja2", "pdfkit"],
-        console_scripts=["poetry_pdf = poetry_pdf.__main__:entrypoint"],
+        entry_points={"console_scripts": ["poetry-pdf = poetry_pdf.__main__:entrypoint"]},
         extras_require={
             "dist": ["wheel", "twine", "bump2version"],
             "docs": [
