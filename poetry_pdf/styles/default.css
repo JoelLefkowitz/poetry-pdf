@@ -1,0 +1,21 @@
+body {
+  font-family: "Avenir Next", sans-serif;
+  margin: 100px;
+}
+
+#title {
+  font-size: 70px;
+  font-weight: 500;
+  text-align: center;
+}
+
+#poem, #author {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 35px;
+  }
+
+#author {
+    text-align: right;
+  }

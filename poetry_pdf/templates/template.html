@@ -1,0 +1,22 @@
+<head>
+  {% for stylesheet in stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{{stylesheet}}"/>
+  {% endfor %}
+</head>
+<body>
+  <h1 id="title">
+    {{title}}
+  </h1>
+  <br>
+  <p id="poem">
+    {% for plaintext_line in plaintext_lines %}
+    {{plaintext_line}}<br>
+    {% endfor %}
+  </p>
+  <br>
+  {% if author %}
+  <p id="author">
+    {{author}}
+  </p>
+  {% endif %}
+</body>

@@ -1,0 +1,22 @@
+package: True
+
+name: poetry-pdf
+version: 0.1.0
+description: Poetry formatter
+
+author: Joel Lefkowitz
+author_email: joellefkowitz@hotmail.com
+author_github: JoelLefkowitz
+
+private: False
+package_name: poetry_pdf
+
+buildbot_worker_password: "Is this a pigeon?"
+buildbot_database_password: "Is this a pigeon?"
+
+keywords: [poetry, pdf]
+twine_username: joellefkowitz
+python_version: 3.6
+
+console_scripts: ["poetry_pdf = poetry_pdf.__main__:entrypoint"]
+install_requires: ["docopts", "jinja2", "pdfkit"]
