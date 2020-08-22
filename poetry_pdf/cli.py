@@ -32,9 +32,10 @@ def parse_cli() -> Tuple[str, str, Optional[str], List[str]]:
 
     output_dir = (
         cli_arguments["--output-dir"]
-        if "--output-dir" in cli_arguments
+        if cli_arguments["--output-dir"]
         else os.getcwd()
     )
+    
     author = cli_arguments["--author"]
 
     stylesheets = cli_arguments["--stylesheet"]
