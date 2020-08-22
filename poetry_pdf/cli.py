@@ -31,8 +31,8 @@ def parse_cli() -> Tuple[str, str, Optional[str], List[str]]:
         raise InvalidSourcePath(source_path)
 
     output_dir = (
-        cli_arguments["--output_dir"]
-        if "--output_dir" in cli_arguments
+        cli_arguments["--output-dir"]
+        if "--output-dir" in cli_arguments
         else os.getcwd()
     )
     author = cli_arguments["--author"]
