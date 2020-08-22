@@ -1,8 +1,9 @@
-from typing import Any
-from poetry_pdf.builder import prepare_html
-from bs4 import BeautifulSoup
 import re
 from typing import List
+
+from bs4 import BeautifulSoup
+
+from poetry_pdf.builder import prepare_html
 
 
 def test_insert_stylesheets() -> None:

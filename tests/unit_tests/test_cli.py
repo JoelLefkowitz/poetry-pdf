@@ -35,12 +35,12 @@ def test_parse_cli_invalid_source() -> None:
 
 def test_parse_multiple_stylesheets() -> None:
     argv = [
-            "poetry-pdf",
-            "tests/fixtures/the_raven.txt",
-            "--stylesheet",
-            "sheet1",
-            "--stylesheet",
-            "sheet2",
+        "poetry-pdf",
+        "tests/fixtures/the_raven.txt",
+        "--stylesheet",
+        "sheet1",
+        "--stylesheet",
+        "sheet2",
     ]
     with patch.object(sys, "argv", argv):
         stylesheets = parse_cli()[3]
