@@ -9,7 +9,7 @@ path_guard("../..")
 
 
 project = "poetry-pdf"
-version = "1.0.2"
+version = "1.1.0"
 master_doc = "index"
 author = "Joel Lefkowitz"
 copyright = f"{datetime.datetime.now().year}, {author}"
