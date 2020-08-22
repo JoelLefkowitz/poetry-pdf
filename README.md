@@ -90,7 +90,7 @@ Intermediate html:
 
 Generated pdf:
 
-![the_raven.pdf](./example.jpg)
+![the_raven.pdf](https://github.com/JoelLefkowitz/poetry-pdf/blob/master/example.jpg?raw=true)
 
 Custom stylesheets can be specified:
 
