@@ -1,6 +1,6 @@
 # Poetry PDF
 
-Poetry formatter
+Poetry formatter to PDF
 
 ### Status
 

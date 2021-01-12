@@ -1,10 +1,14 @@
 import os
-from typing import List, Optional
+from typing import List
+from typing import Optional
 
 import pdfkit
-from jinja2 import Environment, FileSystemLoader, StrictUndefined
+from jinja2 import Environment
+from jinja2 import FileSystemLoader
+from jinja2 import StrictUndefined
 
-from .utils import parent_dirs_exist, create_parent_dirs
+from .utils import create_parent_dirs
+from .utils import parent_dirs_exist
 
 
 def prepare_html(

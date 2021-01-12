@@ -3,9 +3,9 @@ from typing import List
 from unittest.mock import patch
 
 import pytest
-
 from poetry_pdf.cli import parse_cli
-from poetry_pdf.exceptions import InvalidCommand, InvalidSourcePath
+from poetry_pdf.exceptions import InvalidCommand
+from poetry_pdf.exceptions import InvalidSourcePath
 
 
 @pytest.mark.parametrize(
