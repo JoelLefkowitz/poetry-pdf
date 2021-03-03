@@ -1,15 +1,12 @@
 import os
 import sys
 from inspect import cleandoc
-from typing import List
-from typing import Optional
-from typing import Tuple
+from typing import List, Optional, Tuple
 
 from docopt import DocoptExit  # type: ignore
 from docopt import docopt
 
-from .exceptions import InvalidCommand
-from .exceptions import InvalidSourcePath
+from .exceptions import InvalidCommand, InvalidSourcePath
 
 docopts_cli = cleandoc(
     """
@@ -38,7 +35,7 @@ def parse_cli() -> Tuple[str, str, Optional[str], List[str]]:
         if cli_arguments["--output-dir"]
         else os.getcwd()
     )
-    
+
     author = cli_arguments["--author"]
 
     stylesheets = cli_arguments["--stylesheet"]

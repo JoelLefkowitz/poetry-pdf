@@ -9,13 +9,14 @@ body {
   text-align: center;
 }
 
-#poem, #author {
-    font-style: italic;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 35px;
-  }
+#poem,
+#author {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 35px;
+}
 
 #author {
-    text-align: right;
-  }
+  text-align: right;
+}

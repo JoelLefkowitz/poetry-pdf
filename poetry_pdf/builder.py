@@ -1,14 +1,10 @@
 import os
-from typing import List
-from typing import Optional
+from typing import List, Optional
 
 import pdfkit
-from jinja2 import Environment
-from jinja2 import FileSystemLoader
-from jinja2 import StrictUndefined
+from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
-from .utils import create_parent_dirs
-from .utils import parent_dirs_exist
+from .utils import create_parent_dirs, parent_dirs_exist
 
 
 def prepare_html(
@@ -46,12 +42,12 @@ def build(
     stylesheets: List[str],
 ) -> None:
     html = prepare_html(title, author, plaintext_lines, stylesheets)
-    
-    options = {
-        "--enable-local-file-access": ""
-    }
+
+    options = {"--enable-local-file-access": ""}
 
     if not parent_dirs_exist(output_path):
         create_parent_dirs(output_path)
 
-    pdfkit.from_string(html, output_path, css=stylesheets, options=options)
+    pdfkit.from_string(
+        html, output_path, css=stylesheets, options=options
+    )

@@ -4,7 +4,9 @@ if __name__ == "__main__":
     setup(
         install_requires=["docopts", "jinja2", "pdfkit"],
         entry_points={
-            "console_scripts": ["poetry-pdf = poetry_pdf.__main__:entrypoint"]
+            "console_scripts": [
+                "poetry-pdf = poetry_pdf.__main__:entrypoint"
+            ]
         },
         extras_require={
             "tests": [

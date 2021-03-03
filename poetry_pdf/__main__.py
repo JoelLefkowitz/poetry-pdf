@@ -16,11 +16,17 @@ def entrypoint() -> None:
 
     if not stylesheets:
         stylesheets = [
-            os.path.normpath(os.path.join(__file__, "../styles/default.css"))
+            os.path.normpath(
+                os.path.join(__file__, "../styles/default.css")
+            )
         ]
 
     build(
-        output_path, title, author, plaintext_lines, stylesheets,
+        output_path,
+        title,
+        author,
+        plaintext_lines,
+        stylesheets,
     )
 
 

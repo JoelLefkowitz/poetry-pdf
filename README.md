@@ -1,6 +1,6 @@
 # Poetry PDF
 
-Poetry formatter to PDF
+Poetry formatter to PDF.
 
 ## Status
 
@@ -49,9 +49,7 @@ Intermediate html:
   />
 </head>
 <body>
-  <h1 id="title">
-    The Raven
-  </h1>
+  <h1 id="title">The Raven</h1>
   <br />
   <p id="poem">
     Once upon a midnight dreary, while I pondered, weak and weary,<br />
@@ -69,9 +67,7 @@ Intermediate html:
     Nameless here for evermore.<br />
   </p>
   <br />
-  <p id="author">
-    Edgar Allan Poe
-  </p>
+  <p id="author">Edgar Allan Poe</p>
 </body>
 ```
 
@@ -99,16 +95,17 @@ body {
   text-align: center;
 }
 
-#poem, #author {
-    font-style: italic;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 35px;
-  }
+#poem,
+#author {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 35px;
+}
 
 #author {
-    text-align: right;
-  }
+  text-align: right;
+}
 ```
 
 ## Tests
