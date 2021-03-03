@@ -2,36 +2,23 @@
 
 Poetry formatter to PDF
 
-### Status
+## Status
 
-| Source     | Shields                                                        |
-| ---------- | -------------------------------------------------------------- |
-| Project    | ![license][license] ![release][release]                        |
-| Publishers | [![pypi][pypi]][pypi_link]                                     |
-| Downloads  | ![pypi_downloads][pypi_downloads]                              |
-| Raised     | [![issues][issues]][issues_link] [![pulls][pulls]][pulls_link] |
+| Source     | Shields                                                                                                            |
+| ---------- | ------------------------------------------------------------------------------------------------------------------ |
+| Project    | ![release][release_shield] ![license][license_shield] ![dependents][dependents_shield]                             |
+| Health     | ![travis][travis_shield] ![codacy][codacy_shield] ![coverage][coverage_shield] ![readthedocs][readthedocs_shield]  |
+| Repository | ![issues][issues_shield] ![pulls][pulls_shield]                                                                    |
+| Publishers | ![pypi][pypi_shield] ![python_versions][python_versions_shield] ![pypi_downloads][pypi_downloads_shield]           |
+| Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield] |
 
-<!--- Table links --->
+## Installation
 
-[license]: https://img.shields.io/github/license/JoelLefkowitz/poetry-pdf
+```bash
+pip install poetry-pdf
+```
 
-[release]: https://img.shields.io/github/v/tag/JoelLefkowitz/poetry-pdf
-
-[pypi_downloads]: https://img.shields.io/pypi/dw/poetry_pdf
-
-[pypi]: https://img.shields.io/pypi/v/poetry_pdf "PyPi"
-
-[pypi_link]: https://pypi.org/project/poetry_pdf
-
-[issues]: https://img.shields.io/github/issues/JoelLefkowitz/poetry-pdf "Issues"
-
-[issues_link]: https://github.com/JoelLefkowitz/poetry-pdf/issues
-
-[pulls]: https://img.shields.io/github/issues-pr/JoelLefkowitz/poetry-pdf "Pull requests"
-
-[pulls_link]: https://github.com/JoelLefkowitz/poetry-pdf/pulls
-
-### Usage
+## Usage
 
 Plaintext is converted into html and pdfkit is used to export a PDF.
 
@@ -90,7 +77,7 @@ Intermediate html:
 
 Generated pdf:
 
-![the_raven.pdf](https://github.com/JoelLefkowitz/poetry-pdf/blob/master/example.jpg?raw=true)
+![raven][raven]
 
 Custom stylesheets can be specified:
 
@@ -124,58 +111,62 @@ body {
   }
 ```
 
-### Installing
+## Tests
 
-To install the package from pypi:
-
-```bash
-pip install poetry_pdf
-```
-
-Alternatively, you can clone the repo and build the package locally.
-
-### Docs
-
-Additional details are available in the [full documentation](https://poetry-pdf.readthedocs.io/en/latest/).
-
-To generate the documentation locally:
+To run unit tests:
 
 ```bash
-multi-job docs
+grunt tests:unit
 ```
 
-### Tests
-
-Unit tests and behaviour tests are written with the pytest framework.
-
-To run tests:
+To generate a coverage report:
 
 ```bash
-multi-job tests
+grunt tests:coverage
 ```
 
-Additionally, an html report will be saved to the local directory.
+## Documentation
 
-### Buildbot
+This repository's documentation is hosted on [readthedocs][readthedocs].
 
-To run the buildbot server:
+To generate the sphinx configuration:
 
 ```bash
-cd ci
-docker-compose up -d
+grunt docs:generate
 ```
 
--   Builders are configured in master.cfg.
--   Build masters read their configuration from <https://github.com/JoelLefkowitz/poetry-pdf/poetry_pdf/ci/master.cfg>
--   Worker and database passwords are configured as environment variables
+Then build the documentation:
 
-### Contributing
+```bash
+grunt docs:build
+```
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+## Tooling
 
-### Versioning
+To run linters:
 
-[SemVer](http://semver.org/) is used for versioning. For a list of versions available, see the tags on this repository.
+```bash
+grunt lint
+```
+
+To run formatters:
+
+```bash
+grunt format
+```
+
+Before commiting new code:
+
+```bash
+grunt precommit
+```
+
+This will run linters, formaters, generate a test coverage report and the sphinx configuration.
+
+## Versioning
+
+This repository adheres to semantic versioning standards.
+For more inforamtion on semantic versioning visit [SemVer][semver].
 
 Bump2version is used to version and tag changes.
 For example:
@@ -184,18 +175,70 @@ For example:
 bump2version patch
 ```
 
-Releases are made on every major change.
+## Changelog
 
-### Author
+Please read this repository's [CHANGELOG](CHANGELOG.md) for details on changes that have been made.
 
--   **Joel Lefkowitz** - _Initial work_ - [Joel Lefkowitz](https://github.com/JoelLefkowitz)
+## Contributing
 
-See also the list of contributors who participated in this project.
+Please read this repository's guidelines on [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-### License
+## Contributors
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+- **Joel Lefkowitz** - _Initial work_ - [Joel Lefkowitz][joellefkowitz]
 
-### Acknowledgments
+[![Buy Me A Coffee][coffee_button]][coffee]
 
-None yet!
+## Remarks
+
+Lots of love to the open source community!
+
+![Be kind][be_kind]
+
+<!-- Github links -->
+
+[pulls]: https://github.com/JoelLefkowitz/poetry-pdf/pulls
+[issues]: https://github.com/JoelLefkowitz/poetry-pdf/issues
+[raven]: https://github.com/JoelLefkowitz/poetry-pdf/blob/master/example.jpg?raw=true
+
+<!-- External links -->
+
+[readthedocs]: https://poetry-pdf.readthedocs.io/en/latest/
+[semver]: http://semver.org/
+[coffee]: https://www.buymeacoffee.com/joellefkowitz
+[coffee_button]: https://cdn.buymeacoffee.com/buttons/default-blue.png
+[be_kind]: https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif
+
+<!-- Acknowledgments -->
+
+[joellefkowitz]: https://github.com/JoelLefkowitz
+
+<!-- Project shields -->
+
+[release_shield]: https://img.shields.io/github/v/tag/joellefkowitz/poetry-pdf
+[license_shield]: https://img.shields.io/github/license/joellefkowitz/poetry-pdf
+[dependents_shield]: https://img.shields.io/librariesio/dependent-repos/pypi/poetry-pdf
+
+<!-- Health shields -->
+
+[travis_shield]: https://img.shields.io/travis/joellefkowitz/poetry-pdf
+[codacy_shield]: https://img.shields.io/codacy/coverage/poetry-pdf
+[coverage_shield]: https://img.shields.io/codacy/grade/poetry-pdf
+[readthedocs_shield]: https://img.shields.io/readthedocs/poetry-pdf
+
+<!-- Repository shields -->
+
+[issues_shield]: https://img.shields.io/github/issues/joellefkowitz/poetry-pdf
+[pulls_shield]: https://img.shields.io/github/issues-pr/joellefkowitz/poetry-pdf
+
+<!-- Publishers shields -->
+
+[pypi_shield]: https://img.shields.io/pypi/v/poetry-pdf
+[python_versions_shield]: https://img.shields.io/pypi/pyversions/poetry-pdf
+[pypi_downloads_shield]: https://img.shields.io/pypi/dw/poetry-pdf
+
+<!-- Activity shields -->
+
+[contributors_shield]: https://img.shields.io/github/contributors/joellefkowitz/poetry-pdf
+[monthly_commits_shield]: https://img.shields.io/github/commit-activity/m/joellefkowitz/poetry-pdf
+[last_commit_shield]: https://img.shields.io/github/last-commit/joellefkowitz/poetry-pdf

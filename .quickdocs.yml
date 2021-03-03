@@ -1,0 +1,7 @@
+project: poetry-pdf
+version: 1.1.0
+author: Joel Lefkowitz
+verbose_name: Poetry pdf
+html_title: Poetry pdf
+github_url: JoelLefkowitz/poetry-pdf
+apidoc_module_dir: poetry_pdf
