@@ -1,7 +1,7 @@
-Poetry pdf
+Poetry PDF
 ============
 
-Welcome to Poetry pdf's documentation!
+Welcome to Poetry PDF's documentation!
 
 .. raw:: html
    :file: README.html

@@ -1,8 +1,11 @@
 language: python
 python: 3.8
 
+os: linux
+dist: xenial
+
 before_install:
-  - pip install .
+  - pip install .[all]
   - nvm install 14
   - npm install
   - npm install -g grunt-cli
@@ -11,57 +14,34 @@ cache:
   - pip
   - npm
 
-aliases:
-  codacy_report: &codacy_report
-    after_success: python-codacy-coverage -r coverage.xml
-
-  codacy_secure: &codacy_secure
-    env:
-      secure:
-
-  install_pandoc: &install_pandoc
-    addons:
-      apt:
-        packages:
-          - pandoc
-
-  pypi_secure: &pypi_secure
-    password:
-      secure:
-
 jobs:
   include:
     - stage: Linters
       script: grunt lint
-      install: pip install .[tools]
 
     - &unittests
       stage: Unit tests
       python: 3.6
-      script: grunt tests:unit
-      install: pip install .[tests]
+      script: grunt tests:unit    
 
     - <<: *unittests
       python: 3.7
 
     - <<: *unittests
       python: 3.8
-      <<: *codacy_report
-      <<: *codacy_secure
-
-    - stage: Docs
-      script: "grunt docs:build"
-      install: pip install -r docs/requirements.txt
-      <<: *install_pandoc
+      after_success: python-codacy-coverage -r coverage.xml
+      env:
+        secure: mxf8cCEBGIyAUIr3EggZObMixeByWDtdU/3utPzOOq7e9nr17RfWGdnfkk1UA1DDa8IEEh9mCYypUmq5xM3baumvZC+Vwg/nDRp0n/MyftnSco/Qf1WVi4/Y2tLpzWSYEGN1zLY9pbAfoZD/bEPUgYMjvuPsTYQ5CWA1vLi+DY50JNPpcwY7k82QX1YL93LvHAYMCln1jubm5L3qPIXiCnCKvqg9tMCfS70cgro+EV2UX8APCZtqFaL1MVsGCbSYF/2CXWQdvNMOtdtJfSu/kxE5vxUDiEps+46izQk1r1CUDhKxS2q7/aSARf2g+XfMhMJWhJZQ1irF/2Jumjdr2A90q2GRD1SzOQrkannjBVqebVndwlE6W/PSInqspxXivlGACsfLQp09s47ie8qCzJUZXs/q5/Cxf+6xGqpc4hb82ka823zhcGbztcxiuI1yHzW3AyUObNoFx52GvRir9ECv1zVSYzSpz15bYgDu79/MgVtppd0Nt8BxJdFhikUaz2fU67VlkC4iz08g+BNdz1noZzzQe3av5qaHHHvvrM7ajMhQmfooGreykeLVb6d++coOt/1AW2sZGQciyYYy1f1nUZmXp6U3BEU8fyjrgkcSCDe7meELfD5XgknV+HvkOLJZkIq5AdSOY7PcjbNhLM3FJssCDutDaPsrl6HPPhM=
 
     - stage: Publish
-      install: pip install .[tools]
       script: echo This version refers to $(git describe --tags)
       deploy:
         provider: pypi
         distributions: sdist bdist_wheel
         username: "__token__"
-        <<: *pypi_secure
+        password:
+          secure: jTFclaQgDPrbnlyjGkhhE+F21NhORliMWxzCQ2WydE5pMrDDeSBqIkb7nww5IDH3iVSOb5FBRh6h2n0MD6sJmfxrUCFK75ZZna6rxHjkjlEGyjhQtkml2ffP7XfSPOpX6WTjJfFWZLklHe+SDU8SWg3WUwdXYx4nAhokdVrp/wkQarhgrBgKh4MKp8AGmdiJsmXQyIGbKlqch7AS5sco7XTzKApFeKB15pkhZKLxPAkWIfp6WZOhZnqQ6N1u+rbI8To9VwAMFREoH/bLynHeD3yo/54RyeUcge0cgvZm0ZfbVftLp+qTqRoz3x/RxoAhsrcEYcjmtc8ISeR4f9jNaz/dtU9LOeNhZ8J/KbXL314wTRdXxs9vqL+/RnMCPq/e1vRG3NktmiYQdwpx5LfNPN/G3sqIHp5ZhOjwPnLiXhz64pQoruDSneUF1lQQ8H8kKzmONXTuVbzWAgJlGEIUokutE3JyZ2qR98Cfx7J4E0agXju/yOHtt4y7Q+zFNcNB7IJRG8NZAPJ6Bfx1k1NfvBu6+YfUqxMU2BHiL200KS6fobzByufF9wruyo/dk47hyKfvaqgSc89PyclyjLdHNDNtmqIgS+y3xWPFEOieGHL3hv/kJdxWE63ahE2Kh17ey44bsNAwseLOAxWd6NF6jy9twU7cX1TtVAUIBW87MBg=
         on:
           tags: true
           branch: master
+          
