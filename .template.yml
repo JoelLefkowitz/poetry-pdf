@@ -1,0 +1,54 @@
+output_dir: .
+
+clear_top_level: true
+logical_grouping: true
+
+collections:
+  - common
+  - python
+
+loader_paths:
+  - docs
+
+protected:
+  - MANIFEST.in
+
+render_context:
+  project:
+    project_name: poetry-pdf
+    version: 1.1.0
+
+    verbose_name: Poetry PDF
+    description: Poetry formatter to PDF.
+
+    repository: https://github.com/JoelLefkowitz/poetry-pdf
+    codacy_id: 1072e5a889e24a299039fc8978480181
+
+    inserts:
+      - usage.md
+
+  author:
+    author: Joel Lefkowitz
+    author_email: joellefkowitz@hotmail.com
+    author_github_handle: joellefkowitz
+
+  package:
+    is_pypi_package: true
+    package_name: poetry_pdf
+
+  portfolio:
+    is_portfolio: true
+    status_level: 5
+
+    languages:
+      - Python
+
+    frameworks:
+      - Jinja
+
+    paradigms:
+      - Object oriented programming
+
+  public_keys:
+    travis_pypi: jTFclaQgDPrbnlyjGkhhE+F21NhORliMWxzCQ2WydE5pMrDDeSBqIkb7nww5IDH3iVSOb5FBRh6h2n0MD6sJmfxrUCFK75ZZna6rxHjkjlEGyjhQtkml2ffP7XfSPOpX6WTjJfFWZLklHe+SDU8SWg3WUwdXYx4nAhokdVrp/wkQarhgrBgKh4MKp8AGmdiJsmXQyIGbKlqch7AS5sco7XTzKApFeKB15pkhZKLxPAkWIfp6WZOhZnqQ6N1u+rbI8To9VwAMFREoH/bLynHeD3yo/54RyeUcge0cgvZm0ZfbVftLp+qTqRoz3x/RxoAhsrcEYcjmtc8ISeR4f9jNaz/dtU9LOeNhZ8J/KbXL314wTRdXxs9vqL+/RnMCPq/e1vRG3NktmiYQdwpx5LfNPN/G3sqIHp5ZhOjwPnLiXhz64pQoruDSneUF1lQQ8H8kKzmONXTuVbzWAgJlGEIUokutE3JyZ2qR98Cfx7J4E0agXju/yOHtt4y7Q+zFNcNB7IJRG8NZAPJ6Bfx1k1NfvBu6+YfUqxMU2BHiL200KS6fobzByufF9wruyo/dk47hyKfvaqgSc89PyclyjLdHNDNtmqIgS+y3xWPFEOieGHL3hv/kJdxWE63ahE2Kh17ey44bsNAwseLOAxWd6NF6jy9twU7cX1TtVAUIBW87MBg=
+    travis_codacy: mxf8cCEBGIyAUIr3EggZObMixeByWDtdU/3utPzOOq7e9nr17RfWGdnfkk1UA1DDa8IEEh9mCYypUmq5xM3baumvZC+Vwg/nDRp0n/MyftnSco/Qf1WVi4/Y2tLpzWSYEGN1zLY9pbAfoZD/bEPUgYMjvuPsTYQ5CWA1vLi+DY50JNPpcwY7k82QX1YL93LvHAYMCln1jubm5L3qPIXiCnCKvqg9tMCfS70cgro+EV2UX8APCZtqFaL1MVsGCbSYF/2CXWQdvNMOtdtJfSu/kxE5vxUDiEps+46izQk1r1CUDhKxS2q7/aSARf2g+XfMhMJWhJZQ1irF/2Jumjdr2A90q2GRD1SzOQrkannjBVqebVndwlE6W/PSInqspxXivlGACsfLQp09s47ie8qCzJUZXs/q5/Cxf+6xGqpc4hb82ka823zhcGbztcxiuI1yHzW3AyUObNoFx52GvRir9ECv1zVSYzSpz15bYgDu79/MgVtppd0Nt8BxJdFhikUaz2fU67VlkC4iz08g+BNdz1noZzzQe3av5qaHHHvvrM7ajMhQmfooGreykeLVb6d++coOt/1AW2sZGQciyYYy1f1nUZmXp6U3BEU8fyjrgkcSCDe7meELfD5XgknV+HvkOLJZkIq5AdSOY7PcjbNhLM3FJssCDutDaPsrl6HPPhM=
