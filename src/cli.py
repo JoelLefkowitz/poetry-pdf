@@ -1,12 +1,10 @@
 import os
 import sys
-from inspect import cleandoc
-from typing import List, Optional, Tuple
-
+from .exceptions import InvalidCommand, InvalidSourcePath
 from docopt import DocoptExit  # type: ignore
 from docopt import docopt
-
-from .exceptions import InvalidCommand, InvalidSourcePath
+from inspect import cleandoc
+from typing import List, Optional, Tuple
 
 docopts_cli = cleandoc(
     """
@@ -22,8 +20,8 @@ docopts_cli = cleandoc(
 def parse_cli() -> Tuple[str, str, Optional[str], List[str]]:
     try:
         cli_arguments = docopt(docopts_cli)
-    except DocoptExit:
-        raise InvalidCommand(sys.argv[1:], docopts_cli)
+    except DocoptExit as error:
+        raise InvalidCommand(sys.argv[1:], docopts_cli) from error
 
     source_path = cli_arguments["<source_path>"]
 
@@ -31,9 +29,7 @@ def parse_cli() -> Tuple[str, str, Optional[str], List[str]]:
         raise InvalidSourcePath(source_path)
 
     output_dir = (
-        cli_arguments["--output-dir"]
-        if cli_arguments["--output-dir"]
-        else os.getcwd()
+        cli_arguments["--output-dir"] if cli_arguments["--output-dir"] else os.getcwd()
     )
 
     author = cli_arguments["--author"]

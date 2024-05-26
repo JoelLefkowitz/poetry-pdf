@@ -1,10 +1,8 @@
 import os
-from typing import List, Optional
-
 import pdfkit
-from jinja2 import Environment, FileSystemLoader, StrictUndefined
-
 from .utils import create_parent_dirs, parent_dirs_exist
+from jinja2 import Environment, FileSystemLoader, StrictUndefined
+from typing import List, Optional
 
 
 def prepare_html(
@@ -48,6 +46,4 @@ def build(
     if not parent_dirs_exist(output_path):
         create_parent_dirs(output_path)
 
-    pdfkit.from_string(
-        html, output_path, css=stylesheets, options=options
-    )
+    pdfkit.from_string(html, output_path, css=stylesheets, options=options)
