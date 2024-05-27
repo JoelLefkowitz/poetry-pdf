@@ -8,7 +8,7 @@ Poetry formatter to PDF.
 ![Quality](https://img.shields.io/codacy/grade/1072e5a889e24a299039fc8978480181)
 ![Coverage](https://img.shields.io/codacy/coverage/1072e5a889e24a299039fc8978480181)
 
-## Installation
+## Installing
 
 ```bash
 pip install poetry-pdf
